@@ -2,7 +2,6 @@
 
 Purpose:
 
-
 ## example usage
 
 ```bash
@@ -12,14 +11,13 @@ Purpose:
 
 ## install myboth
 
-
 on macos/linux:
+
 ```bash
 
 brew install gkwa/homebrew-tools/myboth
 
 ```
-
 
 on windows:
 

@@ -8,13 +8,15 @@ import (
 
 type Myboth struct{}
 
-// Lint runs golangci-lint on the project
+// Lint runs golangci-lint on the project with all linters enabled
 func (m *Myboth) Lint(ctx context.Context, source *dagger.Directory) *dagger.Container {
 	return dag.GolangciLint().
 		WithModuleCache(dag.CacheVolume("gomod")).
 		WithBuildCache(dag.CacheVolume("gobuild")).
 		WithLinterCache(dag.CacheVolume("golangci")).
-		Run(source)
+		Run(source, dagger.GolangciLintRunOpts{
+			RawArgs: []string{"--enable-all"},
+		})
 }
 
 // Returns a container that echoes whatever string argument is provided
