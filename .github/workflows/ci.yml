@@ -36,7 +36,7 @@ jobs:
           version: latest
           module: .
           workdir: .
-          call: lint --source .
+          verb: lint --source .
       - name: Build & Test
         run: |
           go build -v
