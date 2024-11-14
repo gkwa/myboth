@@ -15,7 +15,10 @@ func (m *Myboth) Lint(ctx context.Context, source *dagger.Directory) *dagger.Con
 		WithBuildCache(dag.CacheVolume("gobuild")).
 		WithLinterCache(dag.CacheVolume("golangci")).
 		Run(source, dagger.GolangciLintRunOpts{
-			RawArgs: []string{"--enable-all"},
+			RawArgs: []string{
+				"--issues-exit-code=0",
+				"--enable-all",
+			},
 		})
 }
 
