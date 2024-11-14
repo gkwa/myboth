@@ -33,8 +33,6 @@ jobs:
         uses: dagger/dagger-for-github@e5153f5610d82ac9f3f848f3a25ad9d696641068 # v7
         with:
           version: latest
-          module: .
-          workdir: .
           args: lint --source .
       - name: Build & Test
         run: |
