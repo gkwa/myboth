@@ -5,12 +5,12 @@
     {
       "automerge": true,
       "automergeStrategy": "merge-commit",
-      "automergeType": "branch",
-      "ignoreTests": true,
-      "matchDepTypes": ["*"]
+      "matchDepTypes": ["*"],
+      "recreateWhen": "always"
     }
   ],
   "platformAutomerge": true,
+  "postUpdateOptions": ["gomodTidyE", "gomodMassage", "gomodUpdateImportPaths"],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0
 }
