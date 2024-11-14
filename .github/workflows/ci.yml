@@ -33,6 +33,7 @@ jobs:
         if: runner.os == 'Linux'
         uses: dagger/dagger-for-github@v6
         with:
+          version: latest
           module: .
           workdir: .
           call: lint --source .
