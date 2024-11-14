@@ -30,7 +30,7 @@ jobs:
       - name: Run golangci-lint in dagger
         if: runner.os == 'Linux'
         continue-on-error: true
-        uses: dagger/dagger-for-github@v6
+        uses: dagger/dagger-for-github@078ac0e046b23f2e6c8cef74163f7dbd7e0e6526 # v6
         with:
           version: latest
           module: .
