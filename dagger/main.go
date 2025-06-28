@@ -17,7 +17,7 @@ func (m *Myboth) Lint(ctx context.Context, source *dagger.Directory) *dagger.Con
 		Run(source, dagger.GolangciLintRunOpts{
 			RawArgs: []string{
 				"--issues-exit-code=0",
-				"--enable-all",
+				"--enable-all-linters",
 			},
 		})
 }
