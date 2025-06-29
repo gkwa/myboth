@@ -2,13 +2,12 @@ package main
 
 import (
 	"context"
-
 	"dagger/myboth/internal/dagger"
 )
 
 type Myboth struct{}
 
-// Lint runs golangci-lint on the project with all linters enabled
+// Lint runs golangci-lint on the project
 func (m *Myboth) Lint(ctx context.Context, source *dagger.Directory) *dagger.Container {
 	return dag.GolangciLint().
 		WithModuleCache(dag.CacheVolume("gomod")).
@@ -17,7 +16,6 @@ func (m *Myboth) Lint(ctx context.Context, source *dagger.Directory) *dagger.Con
 		Run(source, dagger.GolangciLintRunOpts{
 			RawArgs: []string{
 				"--issues-exit-code=0",
-				"--enable-all-linters",
 			},
 		})
 }
