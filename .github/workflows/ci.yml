@@ -31,7 +31,7 @@ jobs:
         if: runner.os == 'Linux'
         uses: dagger/dagger-for-github@b81317a976cb7f7125469707321849737cd1b3bc # v7
         with:
-          version: "0.15.3"
+          version: "latest"
           args: lint --source .
       - name: Build & Test
         run: |
