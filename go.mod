@@ -1,6 +1,8 @@
 module github.com/gkwa/myboth
 
-go 1.23.3
+go 1.24.0
+
+toolchain go1.24.11
 
 require (
 	github.com/fatih/color v1.18.0
@@ -12,7 +14,7 @@ require (
 	github.com/rs/zerolog v1.34.0
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
-	sigs.k8s.io/controller-runtime v0.20.3
+	sigs.k8s.io/controller-runtime v0.22.4
 )
 
 require (
